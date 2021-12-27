@@ -8,7 +8,7 @@ import {Recipe} from "./Recipe";
 
 
 
-function App(props) {
+const App=(props) =>{
 const [recipes, setRecipes]=useState([]);
 const [search, setSearch]=useState("")
 const [query, setQuery] =useState("chicken")
@@ -31,7 +31,7 @@ console.log("store=======", store.getState())
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
-        <input type="text" name="" id="" value={search} onChange={(e)=> setSearch(e.target.value)} />
+        <input type="text"  value={search} onChange={(e)=> setSearch(e.target.value)} />
         <button type="submit">search</button>
       </form>
       {console.log("rendered from jsx")}
@@ -50,7 +50,6 @@ return {storeRecipe  : state.recipe}
 
 
 const mapDispatchToProps=(dispatch)=>({
-
   getStoreData: (data)=>dispatch(actions.getData(data))
 })
 
